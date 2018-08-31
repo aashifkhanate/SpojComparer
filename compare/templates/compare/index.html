@@ -1,0 +1,31 @@
+{%load static%}
+<style type="text/css">
+	input{
+		background-color: #347ab6;
+		color: azure;
+		padding: 5px;
+		border-radius: 5px;
+		display: inline-block;
+		font-size: 22px;
+		max-width: 350px;
+		animation-name: sqinout;
+		animation-timing-function: linear;
+	    animation-iteration-count: infinite;
+	    animation-duration: 1s;
+	    animation-direction: alternate;	
+	}
+	@keyframes sqinout{
+		from{transform: scale(0.85,1);}
+		to{transform: scale(1, 1);}
+	}
+</style>
+<center>
+<div id="container" style="margin-top: 200px;">
+<img src="{%static 'compare/sc.png'%}" alt="No image" height="100px">
+
+<form action="{%url 'list'%}" method="post" style="padding-top: 20px; ">
+	{% csrf_token %}
+	<input type="text" name="userA" placeholder="USER A" /><br>
+	<input type="text" name="userB" placeholder="USER B"/><br>
+	<input type="submit" name="" value="Submit">
+</form></div></center>
